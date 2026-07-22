@@ -10,7 +10,7 @@ export const site = {
   email: 'owusumichael0573@gmail.com',
   github: 'https://github.com/BankyGod',
   linkedin: 'https://linkedin.com/in/michael-owusu-41b162296',
-  resumeUrl: '#resume',
+  resumeUrl: '/Michael-Owusu-Resume.pdf',
   tagline:
     'I build clean, responsive interfaces and ship production-ready mobile and web experiences.',
   socials: {
@@ -189,6 +189,13 @@ export const experience = [
     org: 'Greenbrain Technology',
     period: 'June 2026 — Present',
     detail:
-      'Building and shipping frontend interfaces for production web and mobile experiences.',
+      'Building and shipping frontend interfaces for production web and mobile experiences, including Autobus and Nexus.',
+  },
+  {
+    role: 'IT Intern · Server Room',
+    org: 'St. Francis Xavier Hospital',
+    period: 'Feb 2025 — Mar 2025',
+    detail:
+      'One-month internship supporting hospital IT operations in the server room, gaining practical exposure to infrastructure and systems support.',
   },
 ]

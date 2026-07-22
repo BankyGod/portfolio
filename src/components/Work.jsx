@@ -32,7 +32,7 @@ export default function Work({ projects }) {
                       {String(index + 1).padStart(2, '0')}
                     </span>
                     <div>
-                      <h3 className="font-display text-3xl font-extrabold tracking-tight sm:text-4xl">
+                      <h3 className="font-display text-[1.65rem] font-extrabold leading-tight tracking-tight sm:text-4xl">
                         {project.name}
                       </h3>
                       <p className="mt-2 text-sm text-white/70">{project.role}</p>

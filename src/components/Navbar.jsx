@@ -17,19 +17,26 @@ export default function Navbar({ name, resumeUrl }) {
   const isHome = location.pathname === '/'
 
   useEffect(() => {
+    document.body.classList.toggle('menu-open', open)
+    return () => document.body.classList.remove('menu-open')
+  }, [open])
+
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname, location.hash])
+
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= 1024) setOpen(false)
+    }
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  useEffect(() => {
     if (!isHome) {
       setActive('')
       return undefined
-    }
-
-    if (location.hash) {
-      const id = location.hash.slice(1)
-      const el = document.getElementById(id)
-      if (el) {
-        requestAnimationFrame(() => {
-          el.scrollIntoView({ behavior: 'smooth' })
-        })
-      }
     }
 
     const ids = links.map((l) => l.id)
@@ -48,7 +55,7 @@ export default function Navbar({ name, resumeUrl }) {
     })
 
     return () => observer.disconnect()
-  }, [isHome, location.hash])
+  }, [isHome])
 
   return (
     <>
@@ -73,6 +80,7 @@ export default function Navbar({ name, resumeUrl }) {
         <div className="space-y-3">
           <a
             href={resumeUrl}
+            download="Michael-Owusu-Resume.pdf"
             className="inline-flex text-sm font-bold text-accent underline decoration-accent/30 underline-offset-4 transition hover:decoration-accent"
           >
             Resume
@@ -81,11 +89,11 @@ export default function Navbar({ name, resumeUrl }) {
         </div>
       </aside>
 
-      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b border-line bg-paper/95 px-5 backdrop-blur-md lg:hidden">
+      <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b border-line bg-paper/95 px-5 pt-[env(safe-area-inset-top)] backdrop-blur-md lg:hidden">
         <BrandLogo name={name} size={36} />
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center border border-line text-ink"
+          className="inline-flex h-11 w-11 items-center justify-center border border-line text-ink"
           aria-expanded={open}
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
@@ -102,8 +110,8 @@ export default function Navbar({ name, resumeUrl }) {
       </header>
 
       {open ? (
-        <div className="fixed inset-0 z-40 bg-paper px-5 pt-24 lg:hidden">
-          <nav className="flex flex-col gap-5">
+        <div className="fixed inset-0 z-40 overflow-y-auto bg-paper px-5 pt-24 pb-10 lg:hidden">
+          <nav className="flex flex-col gap-5" aria-label="Mobile">
             {links.map((link) => (
               <Link
                 key={link.href}
@@ -116,10 +124,11 @@ export default function Navbar({ name, resumeUrl }) {
             ))}
             <a
               href={resumeUrl}
-              className="mt-4 text-base font-bold text-accent"
+              download="Michael-Owusu-Resume.pdf"
+              className="mt-4 inline-flex min-h-11 items-center text-base font-bold text-accent"
               onClick={() => setOpen(false)}
             >
-              Resume →
+              Download resume →
             </a>
           </nav>
         </div>

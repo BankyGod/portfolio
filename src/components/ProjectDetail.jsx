@@ -61,7 +61,7 @@ export default function ProjectDetail() {
                   {project.name}
                 </h1>
                 <p className="mt-3 text-base text-white/70 sm:text-lg">{project.role}</p>
-                <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/85">
+                <p className="mt-6 max-w-2xl text-base leading-relaxed text-white/85 sm:text-lg">
                   {project.pitch}
                 </p>
 
@@ -85,9 +85,12 @@ export default function ProjectDetail() {
           <section className="px-5 py-16 sm:px-8 sm:py-20 lg:px-12">
             <div className="mx-auto grid max-w-5xl gap-14">
               <ScrollReveal>
-                <dl className="grid grid-cols-3 gap-4 border border-line bg-paper p-6 sm:p-8">
+                <dl className="grid grid-cols-1 gap-5 border border-line bg-paper p-5 sm:grid-cols-3 sm:gap-4 sm:p-8">
                   {project.outcomes.map((item) => (
-                    <div key={item.label}>
+                    <div
+                      key={item.label}
+                      className="border-b border-line pb-4 last:border-b-0 last:pb-0 sm:border-b-0 sm:pb-0"
+                    >
                       <dt className="text-[10px] font-bold tracking-[0.16em] text-mist uppercase">
                         {item.label}
                       </dt>

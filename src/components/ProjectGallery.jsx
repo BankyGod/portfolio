@@ -63,7 +63,7 @@ export default function ProjectGallery({ images = [], projectName }) {
 
       {isOpen && activeImage ? (
         <motion.div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[60] flex flex-col items-center justify-center bg-ink/90 p-4 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
           aria-label="Image preview"
@@ -73,39 +73,14 @@ export default function ProjectGallery({ images = [], projectName }) {
         >
           <button
             type="button"
-            className="absolute top-5 right-5 text-sm font-bold text-paper"
+            className="absolute top-4 right-4 z-10 inline-flex min-h-11 min-w-11 items-center justify-center text-sm font-bold text-paper"
             onClick={() => setActiveIndex(null)}
           >
             Close ✕
           </button>
 
-          {images.length > 1 ? (
-            <>
-              <button
-                type="button"
-                className="absolute left-4 top-1/2 -translate-y-1/2 border border-white/20 px-3 py-2 text-sm font-bold text-paper sm:left-8"
-                onClick={(event) => {
-                  event.stopPropagation()
-                  setActiveIndex((index) => (index - 1 + images.length) % images.length)
-                }}
-              >
-                ←
-              </button>
-              <button
-                type="button"
-                className="absolute right-4 top-1/2 -translate-y-1/2 border border-white/20 px-3 py-2 text-sm font-bold text-paper sm:right-8"
-                onClick={(event) => {
-                  event.stopPropagation()
-                  setActiveIndex((index) => (index + 1) % images.length)
-                }}
-              >
-                →
-              </button>
-            </>
-          ) : null}
-
           <motion.div
-            className="max-h-[85svh] w-full max-w-sm sm:max-w-md"
+            className="max-h-[70svh] w-full max-w-sm sm:max-w-md"
             onClick={(event) => event.stopPropagation()}
             initial={{ opacity: 0, scale: 0.96 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -114,12 +89,36 @@ export default function ProjectGallery({ images = [], projectName }) {
             <img
               src={activeImage.src}
               alt={activeImage.alt}
-              className="max-h-[75svh] w-full rounded-lg object-contain"
+              className="max-h-[65svh] w-full rounded-lg object-contain"
             />
             <p className="mt-4 text-center text-sm font-semibold text-paper">
               {activeImage.caption}
             </p>
           </motion.div>
+
+          {images.length > 1 ? (
+            <div
+              className="mt-5 flex w-full max-w-sm items-center justify-between gap-3 sm:max-w-md"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <button
+                type="button"
+                className="inline-flex min-h-11 flex-1 items-center justify-center border border-white/20 px-3 text-sm font-bold text-paper"
+                onClick={() =>
+                  setActiveIndex((index) => (index - 1 + images.length) % images.length)
+                }
+              >
+                ← Prev
+              </button>
+              <button
+                type="button"
+                className="inline-flex min-h-11 flex-1 items-center justify-center border border-white/20 px-3 text-sm font-bold text-paper"
+                onClick={() => setActiveIndex((index) => (index + 1) % images.length)}
+              >
+                Next →
+              </button>
+            </div>
+          ) : null}
         </motion.div>
       ) : null}
     </div>

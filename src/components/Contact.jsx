@@ -46,7 +46,7 @@ export default function Contact({ site }) {
           </a>
         </ScrollReveal>
 
-        <Stagger className="mt-10 flex flex-wrap items-center gap-3" delay={0.16}>
+        <Stagger className="mt-10 flex flex-wrap items-center gap-2.5 sm:gap-3" delay={0.16}>
           {socialItems.map(({ key, label, Icon }) => {
             const href = socials[key]
             if (!href) return null
@@ -59,7 +59,7 @@ export default function Contact({ site }) {
                   rel="noreferrer"
                   aria-label={label}
                   title={label}
-                  className="inline-flex h-12 w-12 items-center justify-center border border-white/25 text-paper transition hover:border-accent-bright hover:bg-paper hover:text-ink"
+                  className="inline-flex h-11 w-11 items-center justify-center border border-white/25 text-paper transition hover:border-accent-bright hover:bg-paper hover:text-ink sm:h-12 sm:w-12"
                   whileHover={{ y: -3, scale: 1.04 }}
                   whileTap={{ scale: 0.96 }}
                   transition={{ duration: 0.2 }}
@@ -74,9 +74,10 @@ export default function Contact({ site }) {
         <ScrollReveal delay={0.2}>
           <a
             href={site.resumeUrl}
+            download="Michael-Owusu-Resume.pdf"
             className="mt-8 inline-flex text-sm font-bold text-white/70 transition hover:text-paper"
           >
-            Resume →
+            Download resume →
           </a>
         </ScrollReveal>
       </div>

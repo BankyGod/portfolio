@@ -64,13 +64,13 @@ export default function Hero({ site }) {
         </motion.p>
 
         <motion.div
-          className="mt-10 flex flex-wrap gap-3"
+          className="mt-10 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap"
           {...item}
           transition={{ duration: 0.7, delay: 0.32, ease }}
         >
           <a
             href={`mailto:${site.email}`}
-            className="inline-flex items-center bg-ink px-5 py-3 text-sm font-bold text-paper transition hover:bg-deep"
+            className="inline-flex min-h-11 items-center justify-center bg-ink px-5 py-3 text-sm font-bold text-paper transition hover:bg-deep"
           >
             Email me
           </a>
@@ -78,13 +78,13 @@ export default function Hero({ site }) {
             href={site.linkedin}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center border border-ink/20 bg-paper/70 px-5 py-3 text-sm font-bold text-ink transition hover:border-ink/40"
+            className="inline-flex min-h-11 items-center justify-center border border-ink/20 bg-paper/70 px-5 py-3 text-sm font-bold text-ink transition hover:border-ink/40"
           >
             LinkedIn
           </a>
           <a
             href="#work"
-            className="inline-flex items-center px-2 py-3 text-sm font-bold text-accent transition hover:text-ink"
+            className="inline-flex min-h-11 items-center justify-center px-2 py-3 text-sm font-bold text-accent transition hover:text-ink sm:justify-start"
           >
             See work ↓
           </a>

@@ -8,18 +8,18 @@ export const site = {
   title: 'Frontend Developer',
   location: 'Ghana · Open to remote',
   email: 'owusumichael0573@gmail.com',
-  github: 'https://github.com/michaelowusu',
-  linkedin: 'https://linkedin.com/in/michaelowusu',
+  github: 'https://github.com/BankyGod',
+  linkedin: 'https://linkedin.com/in/michael-owusu-41b162296',
   resumeUrl: '#resume',
   tagline:
     'I build clean, responsive interfaces and ship production-ready mobile and web experiences.',
   socials: {
-    linkedin: 'https://linkedin.com/in/michaelowusu',
-    github: 'https://github.com/michaelowusu',
-    instagram: 'https://instagram.com/',
-    x: 'https://x.com/',
-    facebook: 'https://facebook.com/',
-    whatsapp: 'https://wa.me/',
+    linkedin: 'https://linkedin.com/in/michael-owusu-41b162296',
+    github: 'https://github.com/BankyGod',
+    instagram: 'https://www.instagram.com/mr.michael.owusu/',
+    x: 'https://x.com/bankygodjasper',
+    facebook: 'https://web.facebook.com/profile.php?id=61588829441136',
+    whatsapp: 'https://wa.me/233506574617',
   },
 }
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router'
+import BrandLogo from './BrandLogo'
 
 const links = [
   { href: '/#work', id: 'work', label: 'Work' },
@@ -49,23 +50,11 @@ export default function Navbar({ name, resumeUrl }) {
     return () => observer.disconnect()
   }, [isHome, location.hash])
 
-  const initials = name
-    .split(' ')
-    .map((part) => part[0])
-    .join('')
-
   return (
     <>
       <aside className="fixed inset-y-0 left-0 z-40 hidden w-[13.5rem] flex-col justify-between border-r border-line bg-paper/90 px-7 py-8 backdrop-blur-md lg:flex">
         <div>
-          <Link to="/" className="block">
-            <span className="font-display text-2xl font-extrabold tracking-tight text-ink">
-              {initials}
-            </span>
-            <span className="mt-1 block text-xs font-medium tracking-[0.18em] text-mist uppercase">
-              Portfolio
-            </span>
-          </Link>
+          <BrandLogo name={name} size={44} showWordmark />
 
           <nav className="mt-14 flex flex-col gap-4" aria-label="Primary">
             {links.map((link) => (
@@ -93,9 +82,7 @@ export default function Navbar({ name, resumeUrl }) {
       </aside>
 
       <header className="fixed inset-x-0 top-0 z-50 flex h-16 items-center justify-between border-b border-line bg-paper/95 px-5 backdrop-blur-md lg:hidden">
-        <Link to="/" className="font-display text-lg font-extrabold text-ink">
-          {initials}
-        </Link>
+        <BrandLogo name={name} size={36} />
         <button
           type="button"
           className="inline-flex h-10 w-10 items-center justify-center border border-line text-ink"

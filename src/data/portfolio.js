@@ -3,6 +3,8 @@
  * Replace demo values with your real info when ready.
  */
 
+import { assetUrl } from '../utils/assetUrl'
+
 export const site = {
   name: 'Michael Owusu',
   title: 'Frontend Developer',
@@ -10,7 +12,7 @@ export const site = {
   email: 'owusumichael0573@gmail.com',
   github: 'https://github.com/BankyGod',
   linkedin: 'https://linkedin.com/in/michael-owusu-41b162296',
-  resumeUrl: '/Michael-Owusu-Resume.pdf',
+  resumeUrl: assetUrl('Michael-Owusu-Resume.pdf'),
   tagline:
     'I build clean, responsive interfaces and ship production-ready mobile and web experiences.',
   socials: {
@@ -70,27 +72,27 @@ export const projects = [
     ],
     gallery: [
       {
-        src: '/projects/autobus/screen-1.jpg',
+        src: assetUrl('projects/autobus/screen-1.jpg'),
         alt: 'Autobus welcome screen with AI branding',
         caption: 'Welcome · AI in your pocket',
       },
       {
-        src: '/projects/autobus/screen-2.jpg',
+        src: assetUrl('projects/autobus/screen-2.jpg'),
         alt: 'Autobus user type selection screen',
         caption: 'User type selection',
       },
       {
-        src: '/projects/autobus/screen-3.jpg',
+        src: assetUrl('projects/autobus/screen-3.jpg'),
         alt: 'Autobus operate business with AI screen',
         caption: 'Operate business with AI',
       },
       {
-        src: '/projects/autobus/screen-4.jpg',
+        src: assetUrl('projects/autobus/screen-4.jpg'),
         alt: 'Autobus payment successful screen',
         caption: 'Payment success',
       },
       {
-        src: '/projects/autobus/screen-5.jpg',
+        src: assetUrl('projects/autobus/screen-5.jpg'),
         alt: 'Autobus digital marketing content selection',
         caption: 'Digital marketing',
       },
@@ -130,22 +132,22 @@ export const projects = [
     ],
     gallery: [
       {
-        src: '/projects/nexus/screen-1.jpg',
+        src: assetUrl('projects/nexus/screen-1.jpg'),
         alt: 'Nexus sign-in screen',
         caption: 'Sign in',
       },
       {
-        src: '/projects/nexus/screen-4.jpg',
+        src: assetUrl('projects/nexus/screen-4.jpg'),
         alt: 'Nexus dashboard overview with asset metrics',
         caption: 'Dashboard overview',
       },
       {
-        src: '/projects/nexus/screen-3.jpg',
+        src: assetUrl('projects/nexus/screen-3.jpg'),
         alt: 'Nexus asset detail screen',
         caption: 'Asset detail',
       },
       {
-        src: '/projects/nexus/screen-2.jpg',
+        src: assetUrl('projects/nexus/screen-2.jpg'),
         alt: 'Nexus more menu with asset modules',
         caption: 'Modules · More',
       },

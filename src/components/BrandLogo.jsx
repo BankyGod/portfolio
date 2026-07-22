@@ -1,10 +1,11 @@
 import { Link } from 'react-router'
+import { assetUrl } from '../utils/assetUrl'
 
 export default function BrandLogo({ size = 40, showWordmark = false, name = 'Michael Owusu' }) {
   return (
     <Link to="/" className="inline-flex items-center gap-3" aria-label={`${name} home`}>
       <img
-        src="/logo.svg"
+        src={assetUrl('logo.svg')}
         alt=""
         width={size}
         height={size}

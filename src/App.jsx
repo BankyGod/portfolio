@@ -65,7 +65,7 @@ function AnimatedRoutes() {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/portfolio">
       <AnimatedRoutes />
     </BrowserRouter>
   )

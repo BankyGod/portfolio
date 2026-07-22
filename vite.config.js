@@ -8,6 +8,7 @@ const rootDir = path.dirname(fileURLToPath(import.meta.url))
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/portfolio/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
